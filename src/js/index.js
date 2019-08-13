@@ -15,11 +15,9 @@ import { elements, renderLoader, clearLoader } from './views/base';
 const state = {};
 
 //============Search Controller=======================
-
 const controlSearch = async () => {
   // 1) get the query from the view
   const query = searchView.getInput(); //TODO 
-  //console.log(query);
 
   if (query) {
     // 2) New search object and add it to state
@@ -35,12 +33,10 @@ const controlSearch = async () => {
       await state.search.getResults(); 
 
       // 5) render results on UI
-      //console.log(state.search.result);
       clearLoader();
       searchView.renderResults(state.search.result);
     } catch (err) {
-      alert("Something is wrong with the search");
-      console.log(err);
+      alert(`Something is wrong with the search ${err}`);
       clearLoader();
     }
   }
@@ -65,23 +61,21 @@ elements.searchResPages.addEventListener('click', e => {
 const controlRecipe = async () => {
   // Get ID from the url
   const id = window.location.hash.replace('#', '');
-  //console.log(id);
 
   if (id) {
-    //prepare the UI for changes
+    //Prepare the UI for changes
     recipeView.clearRecipe();
     renderLoader(elements.recipe);
 
-    //highlight selected search item
+    //Highlight selected search item
     if (state.search) searchView.highlightSelected(id);
 
-    //create a new recipe obj
+    //Create a new recipe obj
     state.recipe = new Recipe(id);
 
     try {
-      //get recipe data
+      //Get recipe data
       await state.recipe.getRecipe();
-      //console.log(state.recipe);
       // Render Recipe
       clearLoader();
       recipeView.renderRecipe(
@@ -90,8 +84,7 @@ const controlRecipe = async () => {
         );
 
     } catch (err) {
-      alert('Error processing recipe');
-      console.log(err);
+      alert(`Error processing recipe ${err}`);
     }
   }
 };
@@ -104,11 +97,9 @@ const controlLike = () => {
   if(!state.likes) state.likes = new Likes();
    const currentID = state.recipe.id
   
- // console.log(state.recipe.id);
-
   //User has not yet liked current recipe
   if(!state.likes.isLiked(currentID)) {
-    //Add like to the state
+  //Add like to the state
   const newLike = state.likes.addLike(
     currentID,
     state.recipe.drinkName,
@@ -127,7 +118,6 @@ const controlLike = () => {
     likesView.toggleLikeBtn(false);
     //Remove Like from UI list
     likesView.deleteLike(currentID);
-    console.log(state.likes);
   }
   likesView.toggleLikeMenu(state.likes.getNumLikes());
 };
