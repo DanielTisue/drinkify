@@ -18,8 +18,8 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 400;
   line-height: 1.6;
-  color: #655A56;
-  background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+  color: #FFF;
+  background-image: linear-gradient(to right bottom, #00c4cc, #4682B4);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh; }
@@ -39,7 +39,8 @@ body {
   
 
 .btn, .btn-small, .btn-small:link, .btn-small:visited {
-  background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+  background-image: linear-gradient(to right bottom, #00c4cc, #4682B4); 
+  /* lighten color */
   border-radius: 10rem;
   border: none;
   text-transform: uppercase;
@@ -73,10 +74,10 @@ body {
     fill: currentColor; }
 
 .btn-inline {
-  color: #F59A83;
+  color:#6FB98F;
   font-size: 1.2rem;
   border: none;
-  background-color: #F9F5F3;
+  background-color: #C4DFE6;
   padding: .8rem 1.2rem;
   border-radius: 10rem;
   cursor: pointer;
@@ -91,8 +92,8 @@ body {
   .btn-inline span {
     margin: 0 .4rem; }
   .btn-inline:hover {
-    color: #F48982;
-    background-color: #F2EFEE; }
+    color:#6FB98F;
+    background-color: #C4DFE6; }
   .btn-inline:focus {
     outline: none; }
 
@@ -105,15 +106,15 @@ body {
   .btn-tiny svg {
     height: 100%;
     width: 100%;
-    fill: #F59A83;
+    fill: #6FB98F;
     transition: all .3s; }
   .btn-tiny:focus {
     outline: none; }
   .btn-tiny:hover svg {
-    fill: #F48982;
+    fill: #6FB98F;
     transform: translateY(-1px); }
   .btn-tiny:active svg {
-    fill: #F48982;
+    fill: #6FB98F;
     transform: translateY(0); }
   .btn-tiny:not(:last-child) {
     margin-right: .3rem; }
@@ -121,20 +122,20 @@ body {
 .heading-2 {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #F59A83;
+  color: #4682B4;
   text-transform: uppercase;
   margin-bottom: 2.5rem;
   text-align: center;
   transform: skewY(-5deg); }
 
 .copyright {
-  color: #968B87;
+  color: #4682B4;
   font-size: 1.2rem;
   margin-top: auto; }
 
 .link:link,
 .link:visited {
-  color: #968B87; }
+  color: #4682B4; }
 
 .loader {
   margin: 5rem auto;
@@ -142,7 +143,7 @@ body {
   .loader svg {
     height: 5.5rem;
     width: 5.5rem;
-    fill: #F59A83;
+    fill: #6FB98F;
     transform-origin: 44% 50%;
     animation: rotate 1.5s infinite linear; }
 
@@ -154,7 +155,7 @@ body {
 
 .header {
   grid-area: head;
-  background-color: #F9F5F3;
+  background-color: #C4DFE6;
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -164,9 +165,10 @@ body {
     display: block; }
 .header__title {
 margin-right: 2rem;
+color: #fff;
 }
 .search {
-  background-color: #fff;
+  background-color: #FFF;
   border-radius: 10rem;
   display: flex;
   align-items: center;
@@ -179,13 +181,13 @@ margin-right: 2rem;
     border: none;
     background: none;
     font-family: inherit;
-    color: inherit;
+    color: #000;
     font-size: 1.7rem;
     width: 30rem; }
     .search__field:focus {
       outline: none; }
     .search__field::placeholder {
-      color: #DAD0CC; }
+      color: rgb(149, 230, 250); }
 
 .likes {
   position: relative;
@@ -199,13 +201,13 @@ margin-right: 2rem;
     height: 100%;
     transition: all .3s; }
     .likes__field:hover {
-      background-color: #F2EFEE; }
+      background-color: #C4DFE6; }
   .likes__panel:hover,
   .likes__field:hover + .likes__panel {
     visibility: visible;
     opacity: 1; }
   .likes__icon {
-    fill: #F59A83;
+    fill: #4682B4;
     height: 3.75rem;
     width: 3.75rem; }
   .likes__panel {
@@ -215,7 +217,7 @@ margin-right: 2rem;
     z-index: 10;
     padding: 2rem 0;
     width: 34rem;
-    background-color: #fff;
+    background-color: #C4DFE6;
     box-shadow: 0 0.8rem 5rem 2rem rgba(101, 90, 86, 0.1);
     visibility: hidden;
     opacity: 0;
@@ -238,11 +240,11 @@ margin-right: 2rem;
     text-decoration: none; }
   .results__link:hover,
   .likes__link:hover {
-    background-color: #F9F5F3;
+    background-color: #fff;
     transform: translateY(-2px); }
   .results__link--active,
   .likes__link--active {
-    background-color: #F9F5F3; }
+    background-color: #C4DFE6; }
   .results__fig,
   .likes__fig {
     flex: 0 0 5.5rem;
@@ -261,7 +263,7 @@ margin-right: 2rem;
       position: absolute;
       top: 0;
       left: 0;
-      background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+      background-image: linear-gradient(to right bottom,#00c4cc, #4682B4);
       opacity: .4; }
     .results__fig img,
     .likes__fig img {
@@ -270,17 +272,25 @@ margin-right: 2rem;
       height: 100%;
       object-fit: cover;
       transition: all .3s; }
-  .results__name,
+
+  .results__name{
+    font-size: 1.3rem;
+    color:#000;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: .3rem; 
+  }
+  
   .likes__name {
     font-size: 1.3rem;
-    color: #F59A83;
+    color: #000;
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: .3rem; }
   .results__author,
   .likes__author {
     font-size: 1.1rem;
-    color: #968B87;
+    color: #4682B4;
     text-transform: uppercase;
     font-weight: 600; }
   .results__pages,
@@ -301,7 +311,7 @@ margin-right: 2rem;
     float: right; }
 
 .recipe {
-  background-color: #F9F5F3;
+  background-color: #C4DFE6;
   border-top: 1px solid #fff; }
   .recipe__fig {
     height: 30rem;
@@ -316,7 +326,7 @@ margin-right: 2rem;
       position: absolute;
       top: 0;
       left: 0;
-      background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+      background-image: linear-gradient(to right bottom,#00c4cc, #4682B4);
       opacity: .6; }
   .recipe__img {
     width: 100%;
@@ -340,7 +350,7 @@ margin-right: 2rem;
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;
       padding: 1.3rem 2rem;
-      background-image: linear-gradient(to right bottom, #FBDB89, #F48982); }
+      background-image: linear-gradient(to right bottom, #00c4cc, #4682B4); }
   .recipe__details {
     display: flex;
     align-items: center;
@@ -355,7 +365,7 @@ margin-right: 2rem;
   .recipe__info-icon {
     height: 2rem;
     width: 2rem;
-    fill: #F59A83;
+    fill: rgb(149, 230, 250);
     margin-right: 1rem; }
   .recipe__info-data {
     margin-right: .4rem;
@@ -372,7 +382,7 @@ margin-right: 2rem;
     opacity: 1;
     transform: translateY(0); }
   .recipe__love {
-    background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+    background-image: linear-gradient(to right bottom,#00c4cc, #4682B4);
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -395,7 +405,7 @@ margin-right: 2rem;
     padding: 4rem 5rem;
     font-size: 1.5rem;
     line-height: 1.4;
-    background-color: #F2EFEE;
+    background-color:#C4DFE6;
     display: flex;
     flex-direction: column;
     align-items: center; }
@@ -411,16 +421,13 @@ margin-right: 2rem;
   .recipe__icon {
     height: 1.8rem;
     width: 1.8rem;
-    fill: #F59A83;
-    border: 1px solid #F59A83;
+    fill: #4682B4;
+    border: 1px solid #4682B4;
     border-radius: 50%;
     padding: 2px;
     margin-right: 1rem;
     flex: 0 0 auto;
     margin-top: .1rem; }
-  .recipe__count {
-    margin-right: .5rem;
-    flex: 0 0 auto; }
   .recipe__directions {
     padding: 4rem;
     padding-bottom: 5rem;
@@ -432,8 +439,7 @@ margin-right: 2rem;
     text-align: justify;
     width: 90%;
     margin-bottom: 3rem;
-    color: #968B87; }
-  .recipe__by {
-    font-weight: 700; }
+    color: #fff; }
+  
 
 
