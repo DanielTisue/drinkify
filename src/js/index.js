@@ -109,7 +109,6 @@ const controlLike = () => {
     likesView.toggleLikeBtn(true);
     //Add Like to UI list
     likesView.renderLike(newLike);
-    console.log(state.likes);
   //User has liked the current recipe 
   } else {
     //Remove like from the state
