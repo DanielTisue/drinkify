@@ -10,9 +10,8 @@ export default class Search {
 
       let res = await axios(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.query}`);
       this.result = res.data.drinks;
-      console.log(this.result);
     } catch(err) {
-      alert(`Oh shit ${err}`);
+      alert(`Oh No ${err}`);
     }
   }
 }
