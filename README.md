@@ -28,7 +28,7 @@ This site uses AXIOS for http requests, MVC architecture, local browser storage 
 1. Install webpack cli: https://webpack.js.org/
 1. Install Babel: https://babeljs.io/
 1. Configure webpack and Babel: see webpack.config.js & .babelrc files for reference.
-1. Command line prompt: npm run start (to start app).
+1. Command line prompt: `npm run start` (to start app).
 1. Search for drinks!
 
 ## API Reference
